@@ -12,7 +12,7 @@ order_bp.add_url_rule('/change_delivery_status/<int:id>',view_func=change_delive
 
 order_bp.add_url_rule('/',view_func=order,methods=['GET','POST'])
 
-order_bp.add_url_rule('/show_cart',view_func=show_cart,methods=['GET','POST'])
+order_bp.add_url_rule('/show_cart',view_func=show_cart)
 
 order_bp.add_url_rule('/add_to_cart/<int:id>',view_func=add_to_cart,methods=['POST'])
 
