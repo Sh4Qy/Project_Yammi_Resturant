@@ -3,7 +3,7 @@ from controllers.dishes import show_dishes,add_dish,dish_management,edit_dish,de
 
 dish_bp = Blueprint('dish',__name__)
 
-dish_bp.add_url_rule('/show_dishes/<int:id>',view_func=show_dishes,methods=['GET','POST'])
+dish_bp.add_url_rule('/show_dishes/<int:id>',view_func=show_dishes)
 
 dish_bp.add_url_rule('/add',view_func=add_dish,methods=['GET','POST'])
 
