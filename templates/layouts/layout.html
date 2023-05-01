@@ -16,7 +16,7 @@
           <ul id="nav-mobile">
             <li class="right"><a href="{{url_for('user.log_out')}}">Log Out</a></li>
             <li class="right"><a href="{{url_for('user.edit_profile')}}">Edit Profile</a></li>
-            <li><a href="{{url_for('order.show_cart')}}">My Cart <span style="background-color: red;border-radius: 20px;padding: 2px 7px 2px 5px;">{{len(current_user.carts[-1].dish_association)}}</span> </a></li>
+            <li><a href="{{url_for('order.show_cart')}}">My Cart <span style="background-color: red;border-radius: 20px;padding: 1px 7px 1px 5px;">{{len(current_user.carts[-1].dish_association)}}</span> </a></li>
             <li><a href="{{url_for('order.orders_history')}}">Order History</a></li>
           </ul>
         </div>
