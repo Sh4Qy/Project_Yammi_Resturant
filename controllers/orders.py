@@ -13,7 +13,7 @@ from utils import is_staff
 @login_required
 def order_management():
     deliveries = Delivery.query.all()
-    return is_staff('orders/order_management.html',delivery=deliveries,len=len)
+    return is_staff('orders/order_management.html',delivery=deliveries)
 
 @login_required
 def see_comment(id):
@@ -59,7 +59,7 @@ def show_cart():
         total_cost += (item.dish.price * item.amount)
     cart.total_cost = total_cost
     db.session.commit()
-    return render_template('orders/show_cart.html',items=items,total_cost=total_cost,len=len)
+    return render_template('orders/show_cart.html',items=items,total_cost=total_cost)
 
 @login_required
 def add_to_cart(id):
@@ -104,12 +104,12 @@ def orders_history():
         for item in delivery.cart.dish_association:
             cost += (item.amount * item.dish.price)
         total_cost.append(cost)
-    return render_template('orders/orders_history.html',deliveries=deliveries,total_cost=total_cost,len=len)
+    return render_template('orders/orders_history.html',deliveries=deliveries,total_cost=total_cost)
 
 @login_required
 def summary(id):
     delivery = Delivery.query.get(id)
-    return render_template('orders/summary.html',delivery=delivery,len=len)
+    return render_template('orders/summary.html',delivery=delivery)
 
 @login_required
 def see_comment_summary(id):
