@@ -27,6 +27,7 @@ app.register_blueprint(user_bp)
 app.register_blueprint(dish_bp,url_prefix='/dish')
 app.register_blueprint(order_bp,url_prefix='/order')
 app.register_blueprint(category_bp,url_prefix='/category')
+app.jinja_env.globals.update(len=len)
 
 if __name__=='__main__':
     app.run(debug=True)
