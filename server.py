@@ -1,6 +1,6 @@
 from flask import Flask
 from db import db
-from auth import login_manager
+from auth import login_manager,item_amount
 from models.cart import Cart
 from models.category import Category
 from models.delivery import Delivery
@@ -28,6 +28,7 @@ app.register_blueprint(dish_bp,url_prefix='/dish')
 app.register_blueprint(order_bp,url_prefix='/order')
 app.register_blueprint(category_bp,url_prefix='/category')
 app.jinja_env.globals.update(len=len)
+app.jinja_env.globals.update(item_amount=item_amount)
 
 if __name__=='__main__':
     app.run(debug=True)

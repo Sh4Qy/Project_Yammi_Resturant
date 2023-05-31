@@ -7,6 +7,7 @@ from models.category import Category
 from models.delivery import Delivery
 from models.cart import Cart
 from models.items import Items
+from models.user import User
 from datetime import datetime as dt
 from utils import is_staff
 
